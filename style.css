@@ -1,0 +1,255 @@
+/*========================= RESET / CONFIGURAÇÕES GERAIS =========================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+  font-family: Arial, sans-serif;
+  
+}
+
+.interface {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+header {
+  padding: 40px 4%; /*---------> espaço entre x...*/
+}
+
+header > .interface {
+  display: flex;      /*----------> faz os elementos ficarem lado a lado*/
+  align-items: center;
+  gap: 40px; /* melhor que space-between */
+}
+
+/*========================= LOGO =========================*/
+.logo {
+  width: 230px;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+/*========================= BUSCA =========================*/
+header form {
+  flex: 1;
+  display: flex;
+  justify-content: center;   /*-----> centraliza tudo no meio da página*/
+}
+
+header input[type="search"] {
+  padding: 8px 12px;
+  border: none;
+  outline: none;
+  width: 260px;                                                           
+  border-radius: 20px 0 0 20px;
+}
+
+/* BOTÃO BUSCAR */
+.btn-busca {
+  padding: 8px 14px;
+  border: none;
+  background-color: #ff0051;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+
+  border-radius: 0 20px 20px 0; /* Cantos levemente arredondados */
+}
+
+.btn-busca:hover {
+  background-color: #b80000;
+}
+
+/*========================= MENU DIREITA (CONTA / FAVORITOS / CARRINHO) =========================*/
+
+header nav {
+  display: flex;
+  gap: 70px;
+  align-items: center; 
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn-carrinho{
+  border-radius: 20px 20px 20px 20px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #ff0051;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-carrinho:hover{
+  
+  background-color: #b80000;
+  transform: translateY(-2px);
+}
+
+.contador{
+  background: white;
+  color: #ff0051;
+  padding: 2px 6px;
+  border-radius: 50px;
+  margin-left: 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ========================= MENU PRINCIPAL =========================*/
+.menu {
+  background-color: #d60000;
+}
+
+.menu .interface {
+  display: flex;
+  align-items: center;
+  height: 55px;
+  justify-content: space-evenly;
+}
+
+/* ÍCONE ☰ */
+.menu-icone {
+  background: none;  /* regra CSS utilizada para remover qualquer cor, imagem ou gradiente de fundo previamente definido*/
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* LINKS DO MENU */
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 24px 24px;
+  display: flex;
+  align-items: center;
+}
+
+/* EFEITO HOVER */
+.menu a:hover {
+  background-color: #b80000;
+}
+
+
+/* ========================= MAIN =========================*/
+
+main {
+    margin-top: 30px;
+}
+
+/* Container dos produtos */
+.produtos {
+    max-width: 1400px;  
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Melhora a responsividade */
+    gap: 20px;
+    width: 100%;
+}
+
+/* O CARD */
+.div-produto-card {
+    color: white;
+    background: #111;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Garante que todos tenham a mesma altura */
+}
+
+.div-produto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(255, 0, 81, 0.726);
+}
+
+/* IMAGEM */
+.div-produto-card img {
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 15px;
+    height: 180px;
+    object-fit: contain;
+    background-color: #fff; /* Fundo branco para destacar o produto */
+}
+
+/* TÍTULO/NOME - O segredo do alinhamento */
+.titulo {
+    font-size: 14px;
+    line-height: 1.4;
+    min-height: 80px; /* Mantém o espaço para 4 linhas de texto */
+    margin-bottom: 15px; /* Empurra o preço para baixo */
+    color: #efefef;
+    font-weight: 500;
+}
+
+/* BLOCO DE PREÇO - Agrupando para organizar */
+.preco-antigo {
+    font-size: 11px;
+    color: #ff4d4d; /* Vermelho mais visível */
+    margin-bottom: 2px;
+}
+
+.valor-riscado {
+    text-decoration: line-through;
+}
+
+.preco {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: #fff;
+}
+
+/* INFORMAÇÕES DE PAGAMENTO - Menores para não poluir */
+.avista, .pix {
+    font-size: 12px;
+    color: #bbb;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.parcelamento {
+    margin-top: 15px; /* Dá um respiro antes do parcelamento */
+    font-size: 12px;
+    color: #999;
+    line-height: 1.4;
+    flex-grow: 1; /* Faz esse bloco ocupar o espaço que sobrar */
+}
+
+/* BOTÃO */
+.btn-comprar {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #ff0051;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.btn-comprar:hover {
+    background-color: #d60044;
+}
